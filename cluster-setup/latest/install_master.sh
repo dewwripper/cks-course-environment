@@ -87,17 +87,12 @@ sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 sudo apt-mark hold kubelet kubeadm kubectl kubernetes-cni
 
 ### install containerd 1.6 over apt-installed-version
-wget https://github.com/containerd/containerd/releases/download/v1.6.12/containerd-1.6.12-linux-amd64.tar.gz
-tar xvf containerd-1.6.12-linux-amd64.tar.gz
-mv bin/* /usr/bin
-rm -rf bin containerd-1.6.12-linux-amd64.tar.gz
-
+wget https://github.com/containerd/containerd/releases/download/v1.6.2/containerd-1.6.2-linux-amd64.tar.gz
+sudo tar Czxvf /usr/local containerd-1.6.2-linux-amd64.tar.gz
 wget https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
 mv containerd.service /usr/lib/systemd/system/
-
 systemctl daemon-reload
-systemctl unmask containerd
-systemctl start containerd
+systemctl enable --now containerd
 
 ### containerd
 cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
