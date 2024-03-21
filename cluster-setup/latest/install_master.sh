@@ -92,6 +92,10 @@ tar xvf containerd-1.6.12-linux-amd64.tar.gz
 systemctl stop containerd
 mv bin/* /usr/bin
 rm -rf bin containerd-1.6.12-linux-amd64.tar.gz
+
+wget https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
+mv containerd.service /usr/lib/systemd/system/
+
 systemctl daemon-reload
 systemctl unmask containerd
 systemctl start containerd
