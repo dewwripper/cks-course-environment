@@ -42,6 +42,9 @@ gcloud compute instances create cks-master --zone=europe-west3-c \
 #### Configure
 ```
 sudo -i
+```
+
+```
 bash <(curl -s https://raw.githubusercontent.com/killer-sh/cks-course-environment/master/cluster-setup/latest/install_master.sh)
 ```
 
@@ -68,6 +71,9 @@ gcloud compute instances create cks-worker --zone=europe-west3-c \
 #### Configure
 ```
 sudo -i
+```
+
+```
 bash <(curl -s https://raw.githubusercontent.com/killer-sh/cks-course-environment/master/cluster-setup/latest/install_worker.sh)
 ```
 
